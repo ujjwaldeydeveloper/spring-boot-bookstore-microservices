@@ -20,7 +20,7 @@ tasks:
 
   format:
     cmds:
-      - "{{.MVNW}} spotless:apply"
+      - "{{.MVNW}} -pl catalog-service spotless:apply"
 
   build:
     cmds:

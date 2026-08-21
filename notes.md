@@ -18,3 +18,11 @@
 # Package by layers
 
 # Package by Feature
+
+
+# Test
+
+Integration Test  like a real api call result
+Slice Test --  for individual controller/ service / repository
+
+
