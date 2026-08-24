@@ -11,11 +11,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./catalog-service
     defaults:
       run:
-        working-directory: ${{env.working_directory}} #catalog-service
+        working-directory: catalog-service
 
     steps:
       - name: Check out code
@@ -43,5 +41,5 @@ jobs:
         name: Build and Publish Docker Image
         run: |
           ./mvnw spring-boot:build-image -DskipTests
-          docker push ${{ secrets.DOCKER_USERNAME }}/bookstore-catalog-service
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/bookstore-catalog-service
       
