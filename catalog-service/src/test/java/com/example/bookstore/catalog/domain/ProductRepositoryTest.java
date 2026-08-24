@@ -41,6 +41,7 @@ class ProductRepositoryTest {
 
     @Test
     void shouldReturnEmptyWhenProductCodeNotExist() {
-        assertTrue(productRepository.findByCode("invalid_product_code").isEmpty());;
+        assertTrue(productRepository.findByCode("invalid_product_code")
+                .isEmpty());
     }
 }

@@ -1,0 +1,23 @@
+version: "3.9"
+
+name: "spring-boot-bookstore-microservices"
+
+services:
+  catalog-service:
+    image: ujjwaldeydeveloper/bookstore-catalog-service
+    container_name: catalog-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - DB_URL=jdbc:postgresql://catalog-db:5432/postgres
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=postgres
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    depends_on:
+      catalog-db:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 700m

@@ -9,6 +9,5 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 public record ApplicationProperties(
         @DefaultValue("10")
-        @Min(1)
-        int pageSize) {
+        @Min(1) int pageSize) {
 }
